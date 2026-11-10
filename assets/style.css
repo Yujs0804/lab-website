@@ -99,8 +99,6 @@ footer b { color: var(--ink); }
 footer .fen { color: #5d6b7a; font-size: 12px; }
 footer address { font-style: normal; }
 
-/* 배포 전에 채울 자리. 다 채우면 표시와 이 규칙을 지우세요. */
-.todo { background: #fff3c4; color: #5c4300; padding: 0 5px; border-radius: 3px; font-weight: 600; }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media (max-width: 760px) {
