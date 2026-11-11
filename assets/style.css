@@ -204,6 +204,47 @@ footer.slim { padding: 18px 0; font-size: 12.5px; text-align: center; }
 img.avatar { object-fit: cover; object-position: 50% 0; }
 .prof .avatar { width: 148px; height: 148px; }
 
+/* 구성원 카드 (Members): 사진이 크게 들어가는 세로형, 왼쪽 위에 과정 표기 */
+.people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 18px; }
+.person { position: relative; text-align: center; padding: 34px 18px 26px; }
+.person .avatar { width: 136px; height: 136px; margin: 0 auto 16px; font-size: 46px; }
+.person h3 { margin: 0 0 2px; font-size: 18px; }
+.deg { position: absolute; top: 14px; left: 14px; font-size: 11.5px; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+.deg.phd { background: var(--navy); color: #fff; }
+.deg.ms { background: #e1f2e8; color: #14553a; }
+.deg.ug { background: var(--accent); color: #8a4a00; }
+@media (max-width: 760px) { .people { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 460px) { .people { grid-template-columns: 1fr; } }
+
+/* 첫 화면의 분자 네트워크 (장식용). 좁은 화면에서는 숨긴다 */
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 28px; align-items: center; }
+.hero-net { display: block; width: 100%; height: auto; overflow: visible; }
+.hero-net path { fill: none; }
+.hero-net .he { stroke: rgba(255,255,255,.62); stroke-width: 2; stroke-dasharray: 100; }
+.hero-net .he.thin { stroke: rgba(255,255,255,.34); stroke-width: 1.5; }
+.hero-net .hf { stroke: rgba(255,255,255,.42); stroke-width: 1.5; stroke-dasharray: 4 5; }
+.hero-net .hd { stroke: #ffd58a; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 5 95; stroke-opacity: 0; }
+.hero-net circle { transform-box: fill-box; transform-origin: center; }
+.hero-net .hn { fill: rgba(255,255,255,.14); stroke: #fff; stroke-width: 2; }
+.hero-net .hu { fill: none; stroke: rgba(255,255,255,.72); stroke-width: 1.6; stroke-dasharray: 3 3; }
+.hero-net .hp { fill: var(--citrus); }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-net { display: none; } }
+/* 처음 한 번 자라난 뒤에는 점만 흐른다. 움직임 줄이기를 켠 사람에게는 완성된 그림만 보인다 */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-net circle { animation-name: net-pop; animation-duration: .42s; animation-timing-function: cubic-bezier(.2, .9, .3, 1.3); animation-fill-mode: both; }
+  .hero-net .he { animation-name: net-draw; animation-duration: .55s; animation-timing-function: ease-out; animation-fill-mode: both; }
+  .hero-net .hf { animation-name: net-fade; animation-duration: .5s; animation-fill-mode: both; }
+  .hero-net .d1 { animation-delay: .35s; }
+  .hero-net .d2 { animation-delay: .85s; }
+  .hero-net .d3 { animation-delay: 1.35s; }
+  .hero-net .d4 { animation-delay: 1.75s; }
+  .hero-net .hd { animation: flow-dot 4.8s linear 2.6s infinite; }
+  .hero-net .hd2 { animation-delay: 3.8s; }
+}
+@keyframes net-pop { from { transform: scale(0); opacity: 0; } }
+@keyframes net-draw { from { stroke-dashoffset: 100; } }
+@keyframes net-fade { from { opacity: 0; } }
+
 /* 교수 소개 (Professor): 큰 사진, 한글·영문 정보, 아래로 이어지는 카드 */
 .prof .phead h3 { font-size: 19px; }
 .prof .pt { margin-top: 12px; font-size: 14.5px; font-weight: 700; color: var(--ink); }
