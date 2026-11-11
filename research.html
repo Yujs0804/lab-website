@@ -66,62 +66,97 @@
           <text class="stage" x="650" y="30">데이터 해석</text>
           <text class="stage" x="945" y="30">연구 분야</text>
 
-          <path class="e" marker-end="url(#flow-a)" d="M200,90 C250,90 240,254 290,254"/>
-          <path class="e" marker-end="url(#flow-a)" d="M200,270 H290"/>
-          <path class="e" marker-end="url(#flow-a)" d="M200,450 C250,450 240,286 290,286"/>
-          <path class="e" marker-end="url(#flow-a)" d="M365,230 C365,130 470,90 560,90"/>
-          <path class="e main" marker-end="url(#flow-b)" d="M440,270 H560"/>
-          <path class="e" marker-end="url(#flow-a)" d="M740,90 H840"/>
-          <path class="e" marker-end="url(#flow-a)" d="M740,252 C795,252 785,180 840,180"/>
-          <path class="e" marker-end="url(#flow-a)" d="M740,270 H840"/>
-          <path class="e" marker-end="url(#flow-a)" d="M740,288 C795,288 785,360 840,360"/>
-          <path class="e" marker-end="url(#flow-a)" d="M740,302 C800,302 770,450 840,450"/>
+          <!-- r-* 는 그 선·상자가 속한 경로, h-* 는 마우스를 올리면 그 경로만 남기는 상자 (style.css 참고) -->
+          <path class="e r-all" marker-end="url(#flow-a)" d="M200,90 C250,90 240,254 290,254"/>
+          <path class="e r-all" marker-end="url(#flow-a)" d="M200,270 H290"/>
+          <path class="e r-all" marker-end="url(#flow-a)" d="M200,450 C250,450 240,286 290,286"/>
+          <path class="e r-pk" marker-end="url(#flow-a)" d="M365,230 C365,130 470,90 560,90"/>
+          <path class="e main r-gn" marker-end="url(#flow-b)" d="M440,270 H560"/>
+          <path class="e r-pk" marker-end="url(#flow-a)" d="M740,90 H840"/>
+          <path class="e r-me" marker-end="url(#flow-a)" d="M740,252 C795,252 785,180 840,180"/>
+          <path class="e r-na" marker-end="url(#flow-a)" d="M740,270 H840"/>
+          <path class="e r-sc" marker-end="url(#flow-a)" d="M740,288 C795,288 785,360 840,360"/>
+          <path class="e r-mi" marker-end="url(#flow-a)" d="M740,302 C800,302 770,450 840,450"/>
 
-          <text class="l" x="245" y="176">반응 시료</text>
-          <text class="l" x="245" y="262">전처리 시료</text>
-          <text class="l" x="245" y="372">추출물</text>
-          <text class="l" x="432" y="126">농도 측정</text>
-          <text class="l" x="500" y="258">MS/MS 스펙트럼</text>
-          <text class="l" x="790" y="82">혈중 농도</text>
+          <!-- 선을 따라 흐르는 점: 시료 → 질량분석 → 데이터 해석 → 연구 분야 순서로 이어진다 -->
+          <path class="f r-all" pathLength="100" d="M200,90 C250,90 240,254 290,254"/>
+          <path class="f r-all" pathLength="100" d="M200,270 H290"/>
+          <path class="f r-all" pathLength="100" d="M200,450 C250,450 240,286 290,286"/>
+          <path class="f f2 r-pk" pathLength="100" d="M365,230 C365,130 470,90 560,90"/>
+          <path class="f f2 r-gn" pathLength="100" d="M440,270 H560"/>
+          <path class="f f3 r-pk" pathLength="100" d="M740,90 H840"/>
+          <path class="f f3 r-me" pathLength="100" d="M740,252 C795,252 785,180 840,180"/>
+          <path class="f f3 r-na" pathLength="100" d="M740,270 H840"/>
+          <path class="f f3 r-sc" pathLength="100" d="M740,288 C795,288 785,360 840,360"/>
+          <path class="f f3 r-mi" pathLength="100" d="M740,302 C800,302 770,450 840,450"/>
 
-          <rect class="n src" x="30" y="60" width="170" height="60" rx="10"/>
-          <text class="t" x="115" y="86">간 마이크로좀</text>
-          <text class="s" x="115" y="106">in vitro 대사 반응</text>
-          <rect class="n src" x="30" y="240" width="170" height="60" rx="10"/>
-          <text class="t" x="115" y="266">생체시료</text>
-          <text class="s" x="115" y="286">혈장·소변·분변</text>
-          <rect class="n src" x="30" y="420" width="170" height="60" rx="10"/>
-          <text class="t" x="115" y="446">천연물 추출물</text>
-          <text class="s" x="115" y="466">복합 성분</text>
+          <text class="l r-all" x="245" y="176">반응 시료</text>
+          <text class="l r-all" x="245" y="262">전처리 시료</text>
+          <text class="l r-all" x="245" y="372">추출물</text>
+          <text class="l r-pk" x="432" y="126">농도 측정</text>
+          <text class="l r-gn" x="500" y="258">MS/MS 스펙트럼</text>
+          <text class="l r-pk" x="790" y="82">혈중 농도</text>
 
-          <rect class="n hub" x="290" y="230" width="150" height="80" rx="12"/>
-          <text class="t on" x="365" y="266">LC-MS/MS</text>
-          <text class="s on" x="365" y="287">고분해능 질량분석</text>
+          <g class="g r-all">
+            <rect class="n src" x="30" y="60" width="170" height="60" rx="10"/>
+            <text class="t" x="115" y="86">간 마이크로좀</text>
+            <text class="s" x="115" y="106">in vitro 대사 반응</text>
+          </g>
+          <g class="g r-all">
+            <rect class="n src" x="30" y="240" width="170" height="60" rx="10"/>
+            <text class="t" x="115" y="266">생체시료</text>
+            <text class="s" x="115" y="286">혈장·소변·분변</text>
+          </g>
+          <g class="g r-all">
+            <rect class="n src" x="30" y="420" width="170" height="60" rx="10"/>
+            <text class="t" x="115" y="446">천연물 추출물</text>
+            <text class="s" x="115" y="466">복합 성분</text>
+          </g>
 
-          <rect class="n" x="560" y="60" width="180" height="60" rx="10"/>
-          <text class="t" x="650" y="86">정량 분석법</text>
-          <text class="s" x="650" y="106">개발·검증</text>
-          <rect class="n key" x="560" y="226" width="180" height="88" rx="12"/>
-          <text class="t" x="650" y="266">GNPS 분자 네트워킹</text>
-          <text class="s" x="650" y="287">스펙트럼 유사성</text>
+          <g class="g r-all">
+            <rect class="n hub" x="290" y="230" width="150" height="80" rx="12"/>
+            <text class="t on" x="365" y="266">LC-MS/MS</text>
+            <text class="s on" x="365" y="287">고분해능 질량분석</text>
+          </g>
 
-          <rect class="n area" x="840" y="60" width="210" height="60" rx="10"/>
-          <text class="t" x="945" y="86">약물동태</text>
-          <text class="s" x="945" y="106">ADME/PK 평가</text>
-          <rect class="n area" x="840" y="150" width="210" height="60" rx="10"/>
-          <text class="t" x="945" y="176">약물대사</text>
-          <text class="s" x="945" y="196">대사체 탐색</text>
-          <rect class="n area" x="840" y="240" width="210" height="60" rx="10"/>
-          <text class="t" x="945" y="266">천연물</text>
-          <text class="s" x="945" y="286">성분과 체내 동태</text>
-          <rect class="n area" x="840" y="330" width="210" height="60" rx="10"/>
-          <text class="t" x="945" y="356">비표적 스크리닝</text>
-          <text class="s" x="945" y="376">신종 마약류</text>
-          <rect class="n area" x="840" y="420" width="210" height="60" rx="10"/>
-          <text class="t" x="945" y="446">마이크로바이옴</text>
-          <text class="s" x="945" y="466">약물 상호작용</text>
+          <g class="g r-pk h-pk">
+            <rect class="n" x="560" y="60" width="180" height="60" rx="10"/>
+            <text class="t" x="650" y="86">정량 분석법</text>
+            <text class="s" x="650" y="106">개발·검증</text>
+          </g>
+          <g class="g r-gn h-gn">
+            <rect class="n key" x="560" y="226" width="180" height="88" rx="12"/>
+            <text class="t" x="650" y="266">GNPS 분자 네트워킹</text>
+            <text class="s" x="650" y="287">스펙트럼 유사성</text>
+          </g>
+
+          <g class="g r-pk h-pk">
+            <rect class="n area" x="840" y="60" width="210" height="60" rx="10"/>
+            <text class="t" x="945" y="86">약물동태</text>
+            <text class="s" x="945" y="106">ADME/PK 평가</text>
+          </g>
+          <g class="g r-me h-me">
+            <rect class="n area" x="840" y="150" width="210" height="60" rx="10"/>
+            <text class="t" x="945" y="176">약물대사</text>
+            <text class="s" x="945" y="196">대사체 탐색</text>
+          </g>
+          <g class="g r-na h-na">
+            <rect class="n area" x="840" y="240" width="210" height="60" rx="10"/>
+            <text class="t" x="945" y="266">천연물</text>
+            <text class="s" x="945" y="286">성분과 체내 동태</text>
+          </g>
+          <g class="g r-sc h-sc">
+            <rect class="n area" x="840" y="330" width="210" height="60" rx="10"/>
+            <text class="t" x="945" y="356">비표적 스크리닝</text>
+            <text class="s" x="945" y="376">신종 마약류</text>
+          </g>
+          <g class="g r-mi h-mi">
+            <rect class="n area" x="840" y="420" width="210" height="60" rx="10"/>
+            <text class="t" x="945" y="446">마이크로바이옴</text>
+            <text class="s" x="945" y="466">약물 상호작용</text>
+          </g>
         </svg>
-        <figcaption>시료에서 얻은 질량분석 데이터가 정량 분석과 GNPS 분자 네트워킹을 거쳐 다섯 연구 분야로 이어집니다.</figcaption>
+        <figcaption>시료에서 얻은 질량분석 데이터가 정량 분석과 GNPS 분자 네트워킹을 거쳐 다섯 연구 분야로 이어집니다. 오른쪽 상자에 마우스를 올리면 그 분야로 이어지는 경로만 남습니다.</figcaption>
       </figure>
 
       <div class="card area">
