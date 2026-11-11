@@ -154,6 +154,25 @@ footer.slim { padding: 18px 0; font-size: 12.5px; text-align: center; }
 .pc-list { margin: 8px 0 0; padding-left: 18px; font-size: 13px; color: var(--muted); }
 .pc-list li::marker { color: var(--agc); }
 
+/* 연구 개요도 (Research). 좁은 화면에서는 그림 안에서만 옆으로 민다 */
+.flow { margin: 0 0 22px; border: 1px solid var(--line); border-radius: 14px; background: #fff; padding: 16px 16px 12px; overflow-x: auto; }
+.flow svg { display: block; width: 100%; min-width: 760px; height: auto; }
+.flow text { font-family: "Pretendard", "Inter", sans-serif; text-anchor: middle; }
+.flow .stage { font-size: 13px; font-weight: 700; fill: var(--muted); letter-spacing: .08em; }
+.flow .e { fill: none; stroke: #8fa89c; stroke-width: 1.6; }
+.flow .e.main { stroke: var(--brand); stroke-width: 3; }
+.flow .l { font-size: 13px; font-weight: 600; fill: var(--muted); paint-order: stroke; stroke: #fff; stroke-width: 5px; stroke-linejoin: round; }
+.flow .n { fill: #fff; stroke: var(--brand); stroke-width: 1.6; }
+.flow .n.src { stroke: #b9c6d2; }
+.flow .n.hub { fill: var(--navy); stroke: var(--navy); }
+.flow .n.key { fill: var(--accent); stroke: var(--citrus); stroke-width: 2; }
+.flow .n.area { fill: #e1f2e8; }
+.flow .t { font-size: 16px; font-weight: 700; fill: var(--ink); }
+.flow .s { font-size: 13px; fill: var(--muted); }
+.flow .t.on { fill: #fff; }
+.flow .s.on { fill: #cfe6da; }
+.flow figcaption { margin-top: 10px; font-size: 13px; color: var(--muted); text-align: center; }
+
 /* 연구 분야 카드 (Research): 왼쪽 설명, 오른쪽 관련 논문과 과제 */
 .area { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 10px 28px; margin-bottom: 18px; }
 .area p + p { margin-top: 8px; }
@@ -162,4 +181,14 @@ footer.slim { padding: 18px 0; font-size: 12.5px; text-align: center; }
 @media (max-width: 760px) { .area { grid-template-columns: 1fr; } }
 /* 사진을 넣은 프로필: 얼굴이 가운데 오도록 위쪽 기준으로 자른다 */
 img.avatar { object-fit: cover; object-position: 50% 0; }
-.prof .avatar { width: 112px; height: 112px; }
+.prof .avatar { width: 148px; height: 148px; }
+
+/* 교수 소개 (Professor): 큰 사진, 한글·영문 정보, 아래로 이어지는 카드 */
+.prof .phead h3 { font-size: 19px; }
+.prof .pt { margin-top: 12px; font-size: 14.5px; font-weight: 700; color: var(--ink); }
+.card h3 .k { margin-left: 6px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.card.below { margin-top: 18px; }
+.card.below p + p { margin-top: 8px; }
+.card.below ul + p { margin-top: 10px; }
+.card.grant { background: var(--soft); border-color: #cfe6da; }
+.card.grant b { color: var(--ink); font-size: 14.5px; }
