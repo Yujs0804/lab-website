@@ -143,6 +143,7 @@ footer.slim { padding: 18px 0; font-size: 12.5px; text-align: center; }
 .pc-tags { display: flex; gap: 7px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
 .pc-tags .pill { margin: 0; }
 .rl { font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 20px; color: var(--brand); border: 1px solid var(--brand); }
+.rl.solid { background: var(--brand); color: #fff; }
 .per { font-size: 12px; font-weight: 600; color: var(--muted); }
 .pcard h3 { margin: 0 0 6px; font-size: 15.5px; line-height: 1.42; color: var(--navy); }
 .pcard p { margin: 0; font-size: 13.5px; }
