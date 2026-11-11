@@ -139,14 +139,17 @@ footer.slim { padding: 18px 0; font-size: 12.5px; text-align: center; }
 .card.empty { text-align: center; color: var(--muted); padding: 36px 18px; }
 
 /* 연구과제 카드 (Projects) */
-.pcard { border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: inset 6px 0 0 var(--brand); padding: 16px 20px 18px 26px; margin-bottom: 16px; }
+/* 과제별 색: --agc 띠·역할·목록 점, --agbg/--agt 기관 꼬리표의 바탕과 글자 */
+.pcard { --agc: var(--brand); --agbg: #e1f2e8; --agt: #14553a; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: inset 6px 0 0 var(--agc); padding: 16px 20px 18px 26px; margin-bottom: 16px; }
+.pcard.amber { --agc: #b45309; --agbg: #fff1dc; --agt: #8a4a00; }
+.pcard.blue { --agc: #2f5480; --agbg: #eaf0f6; --agt: #2f5480; }
 .pc-tags { display: flex; gap: 7px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
-.pc-tags .pill { margin: 0; }
-.rl { font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 20px; color: var(--brand); border: 1px solid var(--brand); }
-.rl.solid { background: var(--brand); color: #fff; }
+.pc-tags .pill { margin: 0; background: var(--agbg); color: var(--agt); }
+.rl { font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 20px; color: var(--agc); border: 1px solid var(--agc); }
+.rl.solid { background: var(--agc); color: #fff; }
 .per { font-size: 12px; font-weight: 600; color: var(--muted); }
 .pcard h3 { margin: 0 0 6px; font-size: 15.5px; line-height: 1.42; color: var(--navy); }
 .pcard p { margin: 0; font-size: 13.5px; }
 .pcard .pc-goal { margin-top: 10px; }
 .pc-list { margin: 8px 0 0; padding-left: 18px; font-size: 13px; color: var(--muted); }
-.pc-list li::marker { color: var(--brand); }
+.pc-list li::marker { color: var(--agc); }
