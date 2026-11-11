@@ -153,3 +153,13 @@ footer.slim { padding: 18px 0; font-size: 12.5px; text-align: center; }
 .pcard .pc-goal { margin-top: 10px; }
 .pc-list { margin: 8px 0 0; padding-left: 18px; font-size: 13px; color: var(--muted); }
 .pc-list li::marker { color: var(--agc); }
+
+/* 연구 분야 카드 (Research): 왼쪽 설명, 오른쪽 관련 논문과 과제 */
+.area { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 10px 28px; margin-bottom: 18px; }
+.area p + p { margin-top: 8px; }
+.area h4 { margin: 0 0 6px; font-size: 12.5px; color: var(--navy); }
+.area ul + h4 { margin-top: 12px; }
+@media (max-width: 760px) { .area { grid-template-columns: 1fr; } }
+/* 사진을 넣은 프로필: 얼굴이 가운데 오도록 위쪽 기준으로 자른다 */
+img.avatar { object-fit: cover; object-position: 50% 12%; }
+.prof .avatar { width: 112px; height: 112px; }
